@@ -144,8 +144,9 @@
                 //*id even number*///
                 var student=std.forEach(function(val,index){
                
-               if(val.id%2==0){
-               console.log(val.id);
+                 if(val.id%2==0){
+                 console.log(val.id);
+                 }
                 });
                 
                 //* odd number *//
@@ -157,7 +158,7 @@
                //*id odd number*//
                   if(val.id%2!==0){
                      console.log(val.id);
-                });
+                   }
       
         </script>
     </body>
