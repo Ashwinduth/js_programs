@@ -1,1 +1,165 @@
+<html>
+    <body>
+        <script>
+                              var student=[
+                        {
+                            "id":101,
+                            "name":"Om"  
+                        },
+                        {
+                            "id":102,
+                            "name":"Uha"  
+                        },
+                        {
+                            "id":103,
+                            "name":"Divya"  
+                        },
+                        {
+                            "id":104,
+                            "name":"lohitha"  
+                        },
+                        {
+                            "id":105,
+                            "name":"Prashanth"  
+                        },
+                        {
+                            "id":106,
+                            "name":"Ashok"  
+                        },
+                        {
+                            "id":107,
+                            "name":"Keshav"  
+                        },
+                        {
+                            "id":108,
+                            "name":"Maruthi"  
+                        },
+                        {
+                            "id":109,
+                            "name":"Prasad"  
+                        },
+                        {
+                            "id":110,
+                            "name":"Manoj"  
+                        },
+                        {
+                            "id":111,
+                            "name":"Ashwin"  
+                        },
+                        {
+                            "id":112,
+                            "name":"Anil"  
+                        },
+                        {
+                            "id":113,
+                            "name":"Siva"  
+                        },
+                        {
+                            "id":114,
+                            "name":"Chandu"  
+                        },
+                        {
+                            "id":115,
+                            "name":"Raghu"  
+                        },
+                        {
+                            "id":116,
+                            "name":"Rajesh"  
+                        },
+                        {
+                            "id":117,
+                            "name":"Ravi"  
+                        },
+                        {
+                            "id":118,
+                            "name":"Rama"  
+                        },
+                        {
+                            "id":119,
+                            "name":"Krishna"  
+                        },
+                        {
+                            "id":120,
+                            "name":"Pavan"  
+                        },
+                        {
+                            "id":121,
+                            "name":"Naresh"  
+                        },
+                        {
+                            "id":122,
+                            "name":"Vbm"  
+                        },
+                        {
+                            "id":123,
+                            "name":"Karuna"  
+                        },
+                        {
+                            "id":124,
+                            "name":"Keerthi"  
+                        },
+                        {
+                            "id":125,
+                            "name":"Nagarjuna"  
+                        },
+                        {
+                            "id":126,
+                            "name":"Santosh"  
+                        },
+                        {
+                            "id":127,
+                            "name":"Aravind"  
+                        },
+                        {
+                            "id":128,
+                            "name":"Vishal"  
+                        } 
+                    ];
+                
+                var std=student.forEach(function(val,index){
+                    console.log(val.name);
+                     
+                });
+                
+                var std=student.forEach(function(val,index){
+                    
+               
+                console.log(Object.keys(val));
+                });
+                
+                //*values*///
+                var std=student.forEach(function(val,index){
+               
+                console.log(Object.values(val));
+                });
+                      
+            
+                
+                var std=student.filter(function(val,index){
+                    return val.id%2==0
+                });
+                console.log(std);
+                
+                
+                var student=std.forEach(function(val,index){
+               
+               if(val.id%2==0){
+               console.log(val.id);
+               }
+                });
+                
+                
+                var std=student.filter(function(val,index){
+                return val.id%2!==0
+                });
+                console.log(std);
+                
 
+                if(val.id%2!==0){
+                     console.log(val.id);
+                }
+            
+      
+        </script>
+    </body>
+</html>
