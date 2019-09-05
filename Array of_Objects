@@ -121,14 +121,14 @@
                      
                 })
                 //*keys*///
-                var student=std.forEach(function(val,index){
+                var std=student.forEach(function(val,index){
                     
                
                 console.log(Object.keys(val));
                 });
                 
                 //*values*///
-                var student=std.forEach(function(val,index){
+                var std=student.forEach(function(val,index){
                
                 console.log(Object.values(val));
                 });
@@ -138,7 +138,7 @@
                 var std=student.filter(function(val,index){
                     return val.id%2==0
                 });
-                console.log(student);
+                console.log(std);
                 
                 //*id even number*///
                 var student=std.forEach(function(val,index){
@@ -151,10 +151,10 @@
                     var std=student.filter(function(val,index){
                     return val.id%2!==0
                 });
-                console.log(student);
+                console.log(std);
                 
                //*id odd number*//
-                  if(val.id%2==0){
+                  if(val.id%2!==0){
                      console.log(val.id);
                 });
       
