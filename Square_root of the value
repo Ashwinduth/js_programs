@@ -1,0 +1,13 @@
+<html>
+    <body>
+       <script>
+            var a=[4,8,16,25,625,19,30,144,121,169,196,256]
+       
+           var b=a.forEach(function(val,index){
+               console.log(Math.sqrt(val))
+               
+           })
+           
+        </script>
+    </body>
+</html
