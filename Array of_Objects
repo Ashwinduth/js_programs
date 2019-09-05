@@ -1,7 +1,7 @@
 <html>
     <body>
         <script>
-                              var student=[
+            var student=[
                         {
                             "id":101,
                             "name":"Om"  
