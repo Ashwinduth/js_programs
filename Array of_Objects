@@ -115,13 +115,12 @@
                             "name":"Vishal"  
                         } 
                     ];
-                    
-                //*print all the names*////
+                
                 var std=student.forEach(function(val,index){
                     console.log(val.name);
                      
-                })
-                //*keys*///
+                });
+                
                 var std=student.forEach(function(val,index){
                     
                
@@ -134,31 +133,32 @@
                 console.log(Object.values(val));
                 });
                       
-               //* even number*//
+            
                 
                 var std=student.filter(function(val,index){
                     return val.id%2==0
                 });
                 console.log(std);
                 
-                //*id even number*///
+                
                 var student=std.forEach(function(val,index){
                
-                 if(val.id%2==0){
-                 console.log(val.id);
-                 }
+               if(val.id%2==0){
+               console.log(val.id);
+               }
                 });
                 
-                //* odd number *//
-                    var std=student.filter(function(val,index){
-                    return val.id%2!==0
+                
+                var std=student.filter(function(val,index){
+                return val.id%2!==0
                 });
                 console.log(std);
                 
-               //*id odd number*//
-                  if(val.id%2!==0){
+
+                if(val.id%2!==0){
                      console.log(val.id);
-                   }
+                }
+            
       
         </script>
     </body>
