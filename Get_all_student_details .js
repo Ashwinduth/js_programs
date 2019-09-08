@@ -1,0 +1,49 @@
+<script>
+    var students=[
+        {
+            "id":1,
+            "name":"Ashok",
+            "per":"90%"
+        },
+        {
+            "id":2,
+            "name":"Venkat",
+            "per":"80%"
+        },
+        {
+            "id":3,
+            "name":"Hemanth",
+            "per":"75%"
+        },
+        {
+            "id":4,
+            "name":"Maruthi",
+            "per":"65%"
+        },
+        {
+            "id":5,
+            "name":"Prasad",
+            "per":"35%"
+        },
+        {
+            "id":6,
+            "name":"Ashwin",
+            "per":"20%"
+        },
+        {
+            "id":7,
+            "name":"Prashanth",
+            "per":"22%"
+        }
+    ];
+    function properties(){
+        var std=students.map(function (val,index) {
+            return {
+                "id":val.id,
+                "name":val.name
+            };
+        });
+          console.log(std);
+    }
+    properties()
+</script>
