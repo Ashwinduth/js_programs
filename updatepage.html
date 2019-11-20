@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+
+<div class="container">
+    <form>
+    <div class="form-group">
+        <label>Username</label>
+        <input class="form-control" id="username" type="text" placeholder="Username"/>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input class="form-control" id="email" type="Email" placeholder="you@gmail.com"/>
+    </div>
+  
+    <button class="btn btn-success"type="button" onclick="saveuser()">Save</button>
+    <a class=" btn btn-danger text-white" href="APIedit.html">Move to homepage</a>
+</form>
+</div>
+
+<script>
+    var userId=localStorage.getItem("id");
+    var http2=new XMLHttpRequest();
+        http2.open("GET","https://jsonplaceholder.typicode.com/users/"+userId);
+        http2.send();
+        http2.onreadystatechange=function(){
+            if(this.readyState==4){
+                var res=JSON.parse(this.responseText);
+                prepareList(res);
+                
+            }
+        }
+    function prepareList(data){
+        document.getElementById('username').value=data.username;
+        document.getElementById('email').value=data.email;
+    }
+    function saveuser(){
+        var username=document.getElementById('username').value;
+        var email=document.getElementById('email').value;
+        var data={
+            "username":"username",
+            "email":"email"
+        }
+        var http3=new XMLHttpRequest();
+        http3.open('PUT','https://jsonplaceholder.typicode.com/users/'+userId)
+        http3.send(data);
+        http3.onreadystatechange=function(){
+            if(this.readyState==4){
+                alert("user update success");
+            }
+        }
+
+    }
+     
+    
+   
+</script>
+
