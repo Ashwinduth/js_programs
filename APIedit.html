@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
+
+<div class="container">
+<table class="table  table-bordered ">
+        <thead>
+            <tr class="bg-warning text-center">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>City</th>
+                <th>Phone number</th>
+                <th>Viewmore</th>     
+            </tr>
+        </thead>
+        <tbody id="row">
+    
+        </tbody>
+    </table>
+    
+<button class="btn btn-info" onclick="table()" >Clickhere</button>
+</div>
+<script>
+    function table(){
+        document.getElementById("row").innerHTML="";
+        
+            var http=new XMLHttpRequest();
+            http.open("GET","https://jsonplaceholder.typicode.com/users");
+            http.send();
+        http.onreadystatechange=function(){
+            if(this.readyState==4){    
+                var res=JSON.parse(this.responseText);
+                prepareList(res);
+            }
+        }
+        
+    }
+    function prepareList(data){
+        data.forEach(function(object,index){
+            var tableelem=
+            "<tr class='bg-info text-white text-center'>"+
+            "<td>"+object.id+"</td>"+
+            "<td>"+object.name+"</td>"+
+            "<td>"+object.username+"</td>"+
+            "<td>"+object.address.city+"</td>"+
+            "<td>"+object.phone+"</td>"+
+            "<td>"+'<button class="btn btn-success btn-link text-white" onclick="getuser('+object.id+')">viewmore</button>'+"</td>"+
+            "</tr>";
+            document.getElementById("row").innerHTML+=tableelem;
+           
+        
+                
+        });
+            
+    }
+    function getuser(userId){
+    localStorage.setItem("id",userId)
+    location.href=("file:///C:/Users/ashwinduth/Documents/Project/html/updatepage.html")
+    
+    }
+</script>
+

@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container my-3">
+    
+    <div class="accordion" id="accordionExample">
+
+    </div>
+    <button class="btn btn-primary  my-4 " onclick="clickme()">click here</button>
+        
+</div>
+
+<script>
+    function clickme(){
+        document.getElementById("accordionExample").innerHTML="";
+        var https=new XMLHttpRequest();
+        https.open("GET","https://jsonplaceholder.typicode.com/users");
+        https.send();
+        https.onreadystatechange=function(){
+            if(this.readyState==4){
+                console.log(this.responseText)
+                var res=JSON.parse(this.responseText)
+                preparelist(res);
+            }
+        }
+        function preparelist(users){
+            users.forEach(function(call,index){
+            var callelem=
+                '<div class="card">'+
+                    '<div class="card-header bg-primary  " id="headingOne">'+
+                        '<h2 class="mb-0">'+
+                            '<button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseOne'+call.id+'" aria-expanded="true" aria-controls="collapseOne">'+
+                                "  Group Item "+call.id+
+                            '</button>'+
+                        '</h2>'+
+                     '</div>'+
+
+                    '<div id="collapseOne'+call.id+'" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">'+
+                        '<div class="card-body">'+
+                            '<h6>'+'Student ID is'+" " +call.id+" "+'</h6>'+
+                            '<h6>'+'Student Name is'+" " +call.name+" "+'</h6>'+
+                            '<h6>'+'Student username is'+" " +call.username+" "+'</h6>'+
+                            '<h6>'+'Student email is'+" " +call.email+" "+'</h6>'+
+                            '<h6>'+'Student percentage is'+" " +call.address.city+" "+'</h6>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>';    
+            document.getElementById("accordionExample").innerHTML+=callelem;
+        });   
+        }
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
